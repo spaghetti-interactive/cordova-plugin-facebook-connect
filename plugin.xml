@@ -19,12 +19,12 @@
 
     <preference name="APP_ID" />
     <preference name="APP_NAME" />
-    <preference name="FACEBOOK_URL_SCHEME_SUFFIX" default=" " />
+    <preference name="FACEBOOK_URL_SCHEME_SUFFIX" default="" />
     <preference name="FACEBOOK_AUTO_LOG_APP_EVENTS" default="true" />
     <preference name="FACEBOOK_HYBRID_APP_EVENTS" default="false" />
     <preference name="FACEBOOK_ADVERTISER_ID_COLLECTION" default="true" />
     <preference name="FACEBOOK_ANDROID_SDK_VERSION" default="9.1.1"/>
-    <preference name="FACEBOOK_IOS_SDK_VERSION" default="9.2.0"/>
+    <preference name="FACEBOOK_IOS_SDK_VERSION" default="11.0.1"/>
     <preference name="FACEBOOK_BROWSER_SDK_VERSION" default="v9.0" />
 
     <engines>
@@ -108,19 +108,19 @@
         </config-file>
 
         <config-file target="*-Info.plist" parent="FacebookUrlSchemeSuffix">
-            <string>FACEBOOK_URL_SCHEME_SUFFIX_PLACEHOLDER</string>
+            <string>$FACEBOOK_URL_SCHEME_SUFFIX</string>
         </config-file>
 
-        <config-file target="*-Info.plist" parent="FacebookAutoLogAppEventsEnabled_PLACEHOLDER">
-            <string>FACEBOOK_AUTO_LOG_APP_EVENTS_PLACEHOLDER</string>
+        <config-file target="*-Info.plist" parent="FacebookAutoLogAppEventsEnabled">
+            <string>$FACEBOOK_AUTO_LOG_APP_EVENTS</string>
         </config-file>
 
         <config-file target="*-Info.plist" parent="FacebookHybridAppEvents">
             <string>$FACEBOOK_HYBRID_APP_EVENTS</string>
         </config-file>
 
-        <config-file target="*-Info.plist" parent="FacebookAdvertiserIDCollectionEnabled_PLACEHOLDER">
-            <string>FACEBOOK_ADVERTISER_ID_COLLECTION_PLACEHOLDER</string>
+        <config-file target="*-Info.plist" parent="FacebookAdvertiserIDCollectionEnabled">
+            <string>$FACEBOOK_ADVERTISER_ID_COLLECTION</string>
         </config-file>
 
         <config-file target="*-Info.plist" parent="CFBundleURLTypes">
@@ -206,7 +206,7 @@
             <access origin="https://*.fbcdn.net" />
             <access origin="https://*.akamaihd.net" />
         </config-file>
-        
+
         <hook type="after_prepare" src="scripts/browser/after_prepare.js" />
     </platform>
 </plugin>
